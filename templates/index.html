@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Play
+{% endblock %}
+
+{% block main %}
+    <button id="btnModal"></button>
+
+    <div class="modal" id="modalDialog">
+        <div class="modal-content animate-top">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+
+    {% if session["game_duplicate"] %}
+        <div class="rectangle-container {{ session["game_duplicate"] }} pins-{{ session["game_pins"] }}" id="game">
+    {% else %}
+        <div class="rectangle-container pins-{{ session["game_pins"] }}" id="game">
+    {% endif %}
+            <div class="rectangle-background">
+                <div class="pin-question"></div>
+                <div class="rows" id="rows">
+                    <div class="pin-row" id="pin-row">
+                        <div class="row-number">1</div>
+                        <div class="pin-answer"></div>
+                        <div class="pin-check"></div>
+                        <div class="btn-container">
+                            <button class="btn btn-light check-btn" disabled id="btnCheck">Check</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="circle-rectangle">
+                    <div class="circle-container">
+                        <div class="circle colors blue" draggable="true"></div>
+                        <div class="circle colors orange" draggable="true"></div>
+                        <div class="circle colors green" draggable="true"></div>
+                        <div class="circle colors red" draggable="true"></div>
+                        <div class="circle colors purple" draggable="true"></div>
+                        <div class="circle colors white" draggable="true"></div>
+                        <div class="circle colors yellow" draggable="true"></div>
+                        <div class="circle colors black" draggable="true"></div>
+                    </div>
+                    <div class="new-container">
+                        <button class="btn btn-secondary" id="newGame">New Game</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

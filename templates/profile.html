@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Profile
+{% endblock %}
+
+{% block main %}
+    <h2 class="mb-3">Edit Profile</h2>
+
+    <form action="/profile" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" disabled name="username" placeholder="Username" type="text" value="{{ user.username }}">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="name" placeholder="Name" type="text" value="{{ user.name }}">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-brown" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Change Password
+            </button>
+        </div>
+        <div class="collapse" id="collapseExample">
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" name="password" placeholder="Old Password" type="password">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" name="new" placeholder="New Password" type="password">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" name="confirm" placeholder="Confirm New Password" type="password">
+            </div>
+        </div>
+        <a class="btn btn-brown" href="/">Cancel</a>
+        <button class="btn btn-brown" type="submit">Save Changes</button>
+    </form>
+{% endblock %}

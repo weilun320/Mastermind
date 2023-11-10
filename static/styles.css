@@ -1,0 +1,433 @@
+/* Background image */
+body {
+    background-image: url("background.png");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+/* Page heading */
+h1, h2, h4 {
+    color: #ffffff !important;
+}
+
+/* Brown button */
+.btn-brown {
+    background-color: #ab682e;
+    color: #ffffff;
+}
+.btn-brown:hover {
+    background-color: #ffffff;
+    color: #ab682e !important;
+}
+.btn-brown:hover:active {
+    border-color: #ab682e;
+    color: #ffffff !important;
+}
+.btn-brown:active {
+    border-color: #ab682e !important;
+    color: #ffffff !important;
+}
+.btn-brown:focus-visible {
+    background-color: #ffffff;
+    color: #ab682e !important;
+}
+
+/* Nav */
+
+/* Nav button */
+.btn-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.fa-navicon {
+    color: #ffffff;
+    font-size: 32px;
+}
+.fa-close {
+    color: #ffffff;
+    font-size: 24px;
+}
+/* Off canvas */
+.offcanvas {
+    background-color: #432b16 !important;
+    width: 20rem !important;
+}
+.offcanvas-header {
+    color: #ffffff;
+}
+.offcanvas-title-container {
+    max-width: 15rem;
+    overflow-wrap: break-word;
+}
+/* Nav link, dropdown */
+.navbar-nav > .nav-item {
+    background-color: #ab682e;
+    border-radius: 10px;
+    color: #ffffff !important;
+    margin: 0.5rem 0;
+}
+.navbar-nav > .nav-item:hover {
+    background-color: #ffffff;
+    color: #ab682e !important;
+}
+a.nav-link, .nav-link.dropdown-toggle {
+    padding-left: 1rem;
+}
+.dropdown-toggle {
+    text-align: left;
+    width: 100%;
+}
+.dropdown-menu {
+    background-color: #ab682e;
+    width: 90%;
+}
+.dropdown-item {
+    background-color: #ab682e;
+    color: #ffffff !important;
+}
+.dropdown-item:hover {
+    background-color: #ffffff;
+    color: #ab682e !important;
+}
+
+/* Game page */
+
+/* Modal button */
+#btnModal {
+    display: none;
+}
+/* Modal */
+.animate-top{
+    position:relative;
+    animation:animatetop 0.4s
+}
+@keyframes animatetop{
+    from{top:-300px;opacity:0}
+    to{top:0;opacity:1}
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.275);
+}
+.modal-content {
+  margin: 5% auto;
+  width: 500px;
+  max-width: 90%;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  border-radius: .3rem;
+  outline: 0;
+}
+.modal-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+}
+.modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+.modal-body {
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+.modal-body p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.modal-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding: 1rem;
+    border-top: 1px solid #e9ecef;
+}
+.modal-footer>*{
+    margin: 5px;
+}
+/* Game background */
+.rectangle-container {
+    display: flex;
+    justify-content: center;
+}
+.rectangle-background {
+    background-image: url("rectangle.jpg");
+    border-radius: 8%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    justify-content: center;
+}
+.rectangle-background-4 {
+    width: 400px;
+}
+.rectangle-background-6 {
+    width: 480px;
+}
+.rectangle-background-8 {
+    width: 550px;
+}
+/* Question pin */
+.pin-question {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.question {
+    background-color: #000000;
+    border: 1px solid #000000;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+/* Answer pin */
+.rows {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: flex-end;
+    padding: 0.5rem 0;
+    width: 100%
+}
+.pin-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    margin: 7px 0;
+    width: 100%;
+}
+.row-number {
+    font-size: 25px;
+    font-weight: bold;
+    height: 35px;
+    text-align: center;
+    width: 35px;
+}
+.pin-answer {
+    display: flex;
+}
+.answer {
+    background-color: #ab682e;
+    border: 1px solid #2f1702;
+}
+/* Check pin */
+.pin-check {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.pin-check-4 {
+    width: 38px;
+}
+.pin-check-6 {
+    width: 57px;
+}
+.pin-check-8 {
+    width: 76px;
+}
+.btn-container {
+    width: 69px;
+}
+.check {
+    background-color: #ab682e;
+    border: 1px solid #2f1702;
+    border-radius: 50%;
+    height: 15px;
+    margin: 2px;
+    width: 15px;
+}
+.checked {
+    background-color: #ab682e;
+    border: 1px solid #2f1702;
+    border-radius: 50%;
+    height: 15px;
+    margin: 2px;
+    width: 15px;
+}
+.correct-pin {
+    background-color: #00ff00 !important;
+}
+.correct-color {
+    background-color: #ff0000 !important;
+}
+/* Color pin */
+.circle-rectangle {
+    align-content: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.circle-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.2rem;
+    width: 200px;
+}
+.circle {
+    border-radius: 50%;
+    height: 35px;
+    margin: 3px;
+    width: 35px;
+}
+.colors {
+    cursor: grab;
+}
+.dragover {
+    background-color: #794920;
+}
+.blue {
+    background-image: url("blue.png");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #0101e3;
+}
+.orange {
+    background-image: url("orange.png");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #e55c00;
+}
+.green {
+    background-image: url("green.png");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #00d500;
+}
+.red {
+    background-image: url("red.png");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #fe0808;
+}
+.purple {
+    background-image: url("purple.png");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #924aff;
+}
+.white {
+    background-image: url("white.png");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #efefef;
+}
+.yellow {
+    background-image: url("yellow.png");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #ffce0a;
+}
+.black {
+    background-image: url("black.png");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #0a0a0a;
+}
+/* New game button container */
+.new-container {
+    align-items: center;
+    display: flex;
+}
+
+/* Gamemode page */
+
+.form-check {
+    color: #ffffff;
+}
+.number-of-pins {
+    color: #ffffff;
+}
+
+/* Leaderboard page */
+
+.nav-pills > .nav-item > .nav-link {
+    color: #ffffff;
+}
+.nav-pills > .nav-item > .nav-link.active {
+    background-color: #ab682e;
+}
+.nav-pills > .nav-item > .nav-link:hover, .nav-link.active:hover {
+    background-color: #ffffff;
+    color: #ab682e;
+}
+.nav-tabs > .nav-item > .nav-link {
+    color: #ffffff;
+}
+.nav-tabs > .nav-item > .nav-link.active {
+    color: #ab682e;
+}
+#pills-top > table {
+    caption-side: top;
+}
+#top-10 {
+    color: #ffffff;
+    font-size: 26px;
+    text-align: center;
+}
+
+/* How to play? page */
+
+.word {
+    color: #ab682e;
+    font-size: 48px;
+    text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;
+}
+.colors-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+}
+ol {
+    background-color: #ab682e;
+    color: #ffffff;
+    text-align: left;
+}
+.scores-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.scores-table {
+    caption-side: top;
+    width: 40%;
+}
+.scores-table > caption {
+    color: #ffffff;
+    text-align: center;
+}
+.skip {
+    color: #ffffff;
+    text-decoration: none;
+}

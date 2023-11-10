@@ -1,0 +1,252 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    How To Play?
+{% endblock %}
+
+{% block main %}
+    <h1 class="mb-3">Welcome to <span class="word">Mastermind!!</span></h1>
+
+    <h2 class="mb-3">How To Play?</h2>
+    <div class="mb-3">
+        <a class="skip" href="#play">Click here to skip</a>
+    </div>
+    <div class="colors-container">
+        <div class="circle blue"></div>
+        <div class="circle orange"></div>
+        <div class="circle green"></div>
+        <div class="circle red"></div>
+        <div class="circle purple"></div>
+        <div class="circle white"></div>
+        <div class="circle yellow"></div>
+        <div class="circle black"></div>
+    </div>
+    <ol>
+        <li>
+            First, Mastermind will randomly pick a sequence of colors from the eight colors above. The number of colors is the number of pins.
+            The default number of pins is 4 but you may change at <u><b>Gamemode</b></u> and save it.
+        </li>
+        <br>
+        <li>
+            The goal is you must guess the exact positions of the colors that Mastermind has picked.
+        </li>
+        <br>
+        <li>
+            By default, a color will only appear once in the sequence. If you have turned on <u><b>Duplicate</b></u> option, then any color will be
+            repeated any number of times in the sequence.
+        </li>
+        <br>
+        <li>
+            Drag & drop colors to the empty pins. Click on <u><b>Check</b></u> button after filling up all pins and the game will response with the result
+            of your guess.
+        </li>
+        <br>
+        <li>
+            For each correct color and correct position from your guess that matches the sequence, a small <u><b>green pin</b></u> will be displayed
+            on the right side of current guess.
+        </li>
+        <br>
+        <li>
+            For each correct color from your guess but <b>Incorrect</b> position from the sequence, a small <u><b>red pin</b></u> will be displayed
+            on the right side of current guess.
+        </li>
+        <br>
+        <li>
+            You win and earn scores when you guess the correct colors and right position of the sequence in <u><b>10 tries</b></u>.
+        </li>
+        <br>
+        <li>
+            Scoring table as per below:
+        </li>
+    </ol>
+    <div class="scores-container mb-3">
+        <table class="table table-striped scores-table">
+            <caption>4 pins - Normal</caption>
+            <thead>
+                <tr>
+                    <th>Number of Guess</th>
+                    <th>Scores</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 - 2</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>3 - 4</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>5 - 6</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7 - 8</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>9 - 10</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped scores-table">
+            <caption>4 pins - Duplicate</caption>
+            <thead>
+                <tr>
+                    <th>Number of Guess</th>
+                    <th>Scores</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 - 2</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>3 - 4</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>5 - 6</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>7 - 8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>9 - 10</td>
+                    <td>4</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped scores-table">
+            <caption>6 pins - Normal</caption>
+            <thead>
+                <tr>
+                    <th>Number of Guess</th>
+                    <th>Scores</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 - 2</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>3 - 4</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>5 - 6</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>7 - 8</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>9 - 10</td>
+                    <td>4</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped scores-table">
+            <caption>6 pins - Duplicate</caption>
+            <thead>
+                <tr>
+                    <th>Number of Guess</th>
+                    <th>Scores</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 - 2</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>3 - 4</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>5 - 6</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td>7 - 8</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>9 - 10</td>
+                    <td>8</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped scores-table">
+            <caption>8 pins - Normal</caption>
+            <thead>
+                <tr>
+                    <th>Number of Guess</th>
+                    <th>Scores</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 - 2</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>3 - 4</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>5 - 6</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td>7 - 8</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>9 - 10</td>
+                    <td>8</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped scores-table">
+            <caption>8 pins - Duplicate</caption>
+            <thead>
+                <tr>
+                    <th>Number of Guess</th>
+                    <th>Scores</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1 - 2</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>3 - 4</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>5 - 6</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>7 - 8</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>9 - 10</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <a class="btn btn-brown me-4" href="/gamemode">Set Gamemode</a>
+    <a class="btn btn-brown" href="/" id="play">Click to Play</a>
+{% endblock %}

@@ -1,0 +1,219 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Leaderboard
+{% endblock %}
+
+{% block main %}
+    <h2 class="mb-3">Leaderboard</h2>
+
+    <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-top-tab" data-bs-toggle="pill" data-bs-target="#pills-top" type="button" role="tab" aria-controls="pills-normal" aria-selected="true">Top Players</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-normal-tab" data-bs-toggle="pill" data-bs-target="#pills-normal" type="button" role="tab" aria-controls="pills-normal" aria-selected="true">Normal</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-duplicate-tab" data-bs-toggle="pill" data-bs-target="#pills-duplicate" type="button" role="tab" aria-controls="pills-duplicate" aria-selected="false">Duplicate</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-top" role="tabpanel" aria-labelledby="pills-top-tab" tabindex="0">
+            <table class="table table-primary table-striped">
+                <caption id="top-10">Top 10 Players</caption>
+                <thead>
+                    <tr>
+                        <th>Ranking</th>
+                        <th>Player Name</th>
+                        <th>Player Scores</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in top %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ row.name }}</td>
+                            <td>{{ row.scores }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="pills-normal" role="tabpanel" aria-labelledby="pills-normal-tab" tabindex="0">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="normal-4-tab" data-bs-toggle="tab" data-bs-target="#normal-4-tab-pane" type="button" role="tab" aria-controls="normal-4-tab-pane" aria-selected="true">4 pins</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="normal-6-tab" data-bs-toggle="tab" data-bs-target="#normal-6-tab-pane" type="button" role="tab" aria-controls="normal-6-tab-pane" aria-selected="false">6 pins</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="normal-8-tab" data-bs-toggle="tab" data-bs-target="#normal-8-tab-pane" type="button" role="tab" aria-controls="normal-8-tab-pane" aria-selected="false">8 pins</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="normal-4-tab-pane" role="tabpanel" aria-labelledby="normal-4-tab" tabindex="0">
+                    <table class="table table-primary table-striped">
+                        <thead>
+                            <tr>
+                                <th>Ranking</th>
+                                <th>Player Name</th>
+                                <th>Total Scores</th>
+                                <th>Total Win Game</th>
+                                <th>Best Played (Guess)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in normal_4 %}
+                                <tr>
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ row.name }}</td>
+                                    <td>{{ row.scores }}</td>
+                                    <td>{{ row.count }}</td>
+                                    <td>{{ row.guess }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="normal-6-tab-pane" role="tabpanel" aria-labelledby="normal-6-tab" tabindex="0">
+                    <table class="table table-primary table-striped">
+                        <thead>
+                            <tr>
+                                <th>Ranking</th>
+                                <th>Player Name</th>
+                                <th>Total Scores</th>
+                                <th>Total Win Game</th>
+                                <th>Best Played (Guess)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in normal_6 %}
+                                <tr>
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ row.name }}</td>
+                                    <td>{{ row.scores }}</td>
+                                    <td>{{ row.count }}</td>
+                                    <td>{{ row.guess }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="normal-8-tab-pane" role="tabpanel" aria-labelledby="normal-8-tab" tabindex="0">
+                    <table class="table table-primary table-striped">
+                        <thead>
+                            <tr>
+                                <th>Ranking</th>
+                                <th>Player Name</th>
+                                <th>Total Scores</th>
+                                <th>Total Win Game</th>
+                                <th>Best Played (Guess)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in normal_8 %}
+                                <tr>
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ row.name }}</td>
+                                    <td>{{ row.scores }}</td>
+                                    <td>{{ row.count }}</td>
+                                    <td>{{ row.guess }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="pills-duplicate" role="tabpanel" aria-labelledby="pills-duplicate-tab" tabindex="0">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="duplicate-4-tab" data-bs-toggle="tab" data-bs-target="#duplicate-4-tab-pane" type="button" role="tab" aria-controls="duplicate-4-tab-pane" aria-selected="true">4 pins</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="duplicate-6-tab" data-bs-toggle="tab" data-bs-target="#duplicate-6-tab-pane" type="button" role="tab" aria-controls="duplicate-6-tab-pane" aria-selected="false">6 pins</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="duplicate-8-tab" data-bs-toggle="tab" data-bs-target="#duplicate-8-tab-pane" type="button" role="tab" aria-controls="duplicate-8-tab-pane" aria-selected="false">8 pins</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="duplicate-4-tab-pane" role="tabpanel" aria-labelledby="duplicate-4-tab" tabindex="0">
+                    <table class="table table-primary table-striped">
+                        <thead>
+                            <tr>
+                                <th>Ranking</th>
+                                <th>Player Name</th>
+                                <th>Total Scores</th>
+                                <th>Total Win Game</th>
+                                <th>Best Played (Guess)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in duplicate_4 %}
+                                <tr>
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ row.name }}</td>
+                                    <td>{{ row.scores }}</td>
+                                    <td>{{ row.count }}</td>
+                                    <td>{{ row.guess }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="duplicate-6-tab-pane" role="tabpanel" aria-labelledby="duplicate-6-tab" tabindex="0">
+                    <table class="table table-primary table-striped">
+                        <thead>
+                            <tr>
+                                <th>Ranking</th>
+                                <th>Player Name</th>
+                                <th>Total Scores</th>
+                                <th>Total Win Game</th>
+                                <th>Best Played (Guess)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in duplicate_6 %}
+                                <tr>
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ row.name }}</td>
+                                    <td>{{ row.scores }}</td>
+                                    <td>{{ row.count }}</td>
+                                    <td>{{ row.guess }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="duplicate-8-tab-pane" role="tabpanel" aria-labelledby="duplicate-8-tab" tabindex="0">
+                    <table class="table table-primary table-striped">
+                        <thead>
+                            <tr>
+                                <th>Ranking</th>
+                                <th>Player Name</th>
+                                <th>Total Scores</th>
+                                <th>Total Win Game</th>
+                                <th>Best Played (Guess)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in duplicate_8 %}
+                                <tr>
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ row.name }}</td>
+                                    <td>{{ row.scores }}</td>
+                                    <td>{{ row.count }}</td>
+                                    <td>{{ row.guess }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

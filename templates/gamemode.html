@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Gamemode
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <h2>Gamemode</h2>
+    </div>
+
+    <form action="/gamemode" method="post">
+        <div class="mb-5">
+            <p class="number-of-pins">Number of pins:</p>
+            {% if session["game_pins"] == "6" %}
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="pins-4" name="pins" type="radio" value="4">
+                    <label class="form-check-label" for="pins-4">4 pins</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input checked class="form-check-input" id="pins-6" name="pins" type="radio" value="6">
+                    <label class="form-check-label" for="pins-6">6 pins</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="pins-8" name="pins" type="radio" value="8">
+                    <label class="form-check-label" for="pins-8">8 pins</label>
+                </div>
+            {% elif session["game_pins"] == "8" %}
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="pins-4" name="pins" type="radio" value="4">
+                    <label class="form-check-label" for="pins-4">4 pins</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="pins-6" name="pins" type="radio" value="6">
+                    <label class="form-check-label" for="pins-6">6 pins</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input checked class="form-check-input" id="pins-8" name="pins" type="radio" value="8">
+                    <label class="form-check-label" for="pins-8">8 pins</label>
+                </div>
+            {% else %}
+                <div class="form-check form-check-inline">
+                    <input checked class="form-check-input" id="pins-4" name="pins" type="radio" value="4">
+                    <label class="form-check-label" for="pins-4">4 pins</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="pins-6" name="pins" type="radio" value="6">
+                    <label class="form-check-label" for="pins-6">6 pins</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="pins-8" name="pins" type="radio" value="8">
+                    <label class="form-check-label" for="pins-8">8 pins</label>
+                </div>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            {% if session["game_duplicate"] == "duplicate" %}
+                <div class="form-check form-check-inline form-switch">
+                    <input checked class="form-check-input" id="flexSwitchCheckDefault" name="duplicate" role="switch" type="checkbox" value="duplicate">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Duplicate?</label>
+                </div>
+            {% else %}
+                <div class="form-check form-check-inline form-switch">
+                    <input class="form-check-input" id="flexSwitchCheckDefault" name="duplicate" role="switch" type="checkbox" value="duplicate">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Duplicate?</label>
+                </div>
+            {% endif %}
+        </div>
+        <button class="btn btn-brown" type="submit">Save</button>
+    </form>
+{% endblock %}
